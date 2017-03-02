@@ -1,0 +1,44 @@
+表单
+表单是一个包含表单元素的区域。
+表单元素是允许用户在表单中（比如：文本域、下拉列表、单选框、复选框等等）输入信息的元素。
+表单使用表单标签（<form>）定义。
+<form>
+...
+  input 元素
+...
+</form>
+输入
+多数情况下被用到的表单标签是输入标签（<input>）。输入类型是由类型属性（type）定义的。大多数经常被用到的输入类型如下：
+文本域（Text Fields）
+当用户要在表单中键入字母、数字等内容时，就会用到文本域。
+<form>
+First name: 
+<input type="text" name="firstname" />
+<br />
+Last name: 
+<input type="text" name="lastname" />
+</form>
+浏览器显示如下：
+First name:   
+Last name:  
+注意，表单本身并不可见。同时，在大多数浏览器中，文本域的缺省宽度是20个字符。
+单选按钮（Radio Buttons）
+当用户从若干给定的的选择中选取其一时，就会用到单选框。
+<form>
+<input type="radio" name="sex" value="male" /> Male
+<br />
+<input type="radio" name="sex" value="female" /> Female
+</form>
+浏览器显示如下：
+ Male 
+ Female
+注意，只能从中选取其一。
+复选框（Checkboxes）
+当用户需要从若干给定的选择中选取一个或若干选项时，就会用到复选框。
+<form>
+<input type="checkbox" name="bike" />
+I have a bike
+<br />
+<input type="checkbox" name="car" />
+I have a car
+</form>
