@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ <servlet>
+  <servlet-name>LoginServlet</servlet-name>
+  <servlet-class>com.bigdata.action.LoginServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>RegisterServlet</servlet-name>
+  <servlet-class>com.bigdata.action.RegisterServlet</servlet-class>
+ </servlet>
+  <servlet>
+    <servlet-name>AddStockServlet</servlet-name>
+    <servlet-class>com.bigdata.action.AddStockServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BoughtStockServlet</servlet-name>
+    <servlet-class>com.bigdata.action.BoughtStockServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JudgeServlet</servlet-name>
+    <servlet-class>com.bigdata.action.JudgeServlet</servlet-class>
+  </servlet>
+
+
+
+ <servlet-mapping>
+  <servlet-name>RegisterServlet</servlet-name>
+  <url-pattern>/servlet/RegisterServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/servlet/LoginServlet</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddStockServlet</servlet-name>
+    <url-pattern>/servlet/AddStockServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BoughtStockServlet</servlet-name>
+    <url-pattern>/servlet/BoughtStockServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JudgeServlet</servlet-name>
+    <url-pattern>/servlet/JudgeServlet</url-pattern>
+  </servlet-mapping>
+ <welcome-file-list>
+  <welcome-file>/Login.jsp</welcome-file>
+ </welcome-file-list>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
+</web-app>
