@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User">
+
+	<typeAlias alias="userModel" type="com.rest.vo.UserModel" />
+
+	<resultMap id="user" class="userModel">
+		<result property="id" column="id"/>
+   	  	<result property="userName" column="user_name"/>
+   	  	<result property="passWord" column="user_psw"/>
+	</resultMap>
+	
+	 <sql id="dynamicWhere">
+		<isNotEmpty prepend="AND" property="id">
+			<![CDATA[
+	       	id = #id#
+	       	]]>
+	    </isNotEmpty>
+		<isNotEmpty prepend="AND" property="user_name">
+			<![CDATA[
+	       	user_name = #userName#
+	       	]]>
+	    </isNotEmpty>
+	    <isNotEmpty prepend="AND" property="user_psw">
+			<![CDATA[
+	       	user_psw = #passWord#
+	       	]]>
+	    </isNotEmpty>
+	</sql>
+	
+	<select id="getUser" resultMap="user">
+	
+			select id,user_name,user_psw from usertable where 1=1
+		
+		   <isNotNull property="id" prepend="and">  
+                    id=#id#  
+          </isNotNull>  	
+	      <isNotNull property="userName" prepend="and">  
+                    user_name=#userName#  
+          </isNotNull>  
+          <isNotNull property="passWord" prepend="and">  
+             		 user_psw=#passWord#  
+          </isNotNull>  
+	</select>
+	<select id="getAllUser" resultMap="user">
+			select id,user_name,user_psw from usertable 
+	</select>
+	
+	<update id="updateUser" parameterClass="java.util.HashMap">
+	    <![CDATA[
+			update usertable set user_name= #userName#,user_psw=#passWord# where id = #id#
+          ]]>
+	</update>
+	
+	<insert id="addUser" parameterClass="java.util.HashMap">
+		<![CDATA[
+			insert into usertable(user_name,user_psw) values(#userName#,#passWord#)
+		]]>
+	</insert>
+	<delete id="deleteUser" parameterClass="java.util.HashMap">
+		<![CDATA[
+			delete from usertable where id = #id#
+		]]>
+	</delete>
+	
+	
+	
+	
+</sqlMap>
