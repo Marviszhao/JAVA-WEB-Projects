@@ -4,15 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>restful上传文件</title>
 </head>
 <body>
 <br>
-*.do 默认分风格上传文件
+Restful 风格上传文件
 <br>
 <br>
-<form action="file.do" method="post" enctype = "multipart/form-data">
-	<input type = "hidden" name = "method" value ="upload">
+<form action="/Spring/file/upload" method="post" enctype = "multipart/form-data">
 	<input type = "text" name = "fileName" >
 	<input type = "file" name = "file" >
 	<input type = "submit" value = "上传文件">

@@ -12,20 +12,19 @@ import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Controller
-@RequestMapping("jsps/file.do")
-
-public class FileController implements ServletContextAware{
-	private ServletContext servletContext;
+@RequestMapping("/file")
+public class FileController_Rest implements ServletContextAware{
+private ServletContext servletContext;
 	
 	@Override
 	public void setServletContext(ServletContext arg0) {
 		this.servletContext = arg0;
 	}
 	
-	@RequestMapping(params="method=upload",method = RequestMethod.POST)
+	@RequestMapping(value="/upload",method = RequestMethod.POST)
 	public String uploadFile(String fileName,@RequestParam("file")CommonsMultipartFile file) {
 		if (!file.isEmpty()) {
-			String path = this.servletContext.getRealPath("/upload_do");
+			String path = this.servletContext.getRealPath("/upload_rest");
 			String oriFileName = file.getOriginalFilename();
 			
 			String fileType = oriFileName.substring(oriFileName.lastIndexOf("."));
@@ -45,7 +44,6 @@ public class FileController implements ServletContextAware{
 				e.printStackTrace();
 			}
 		}
-		return "/jsps/upload";
+		return "/jsps/upload_rest";
 	}
-
 }

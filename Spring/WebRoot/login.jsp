@@ -12,7 +12,10 @@
   		<input type = "hidden" name = "method" value = "login">
   		用户名：<input type = "text" name = "user_name" ><br>
   		密码：<input type = "text" name = "user_psw" ><br>
-  		<input type = "submit"  value = "登录">
+  		<input type = "submit"  value = "登录"><br><br>
+  		<a href = "/Spring/index.jsp">去注册</a><br><br>
+  		<a href = "/Spring/jsps/upload.jsp">.do上传文件</a><br><br>
+  		<a href = "/Spring/jsps/upload_rest.jsp">restful上传文件</a>
   	</form>
 </body>
 </html>
